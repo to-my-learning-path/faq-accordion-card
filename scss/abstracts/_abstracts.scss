@@ -1,0 +1,33 @@
+$mobile-size: 375px;
+$desktop-size: 1440px;
+
+// Primary Text
+$very-dark-desaturated-blue: hsl(238, 29%, 16%);
+$soft-red: hsl(14, 88%, 65%);
+
+// Background gradient:
+$soft-violet: hsl(273, 75%, 66%);
+$soft-blue: hsl(240, 73%, 65%);
+
+// Neutral Text
+$very-dark-grayish-blue: hsl(237, 12%, 33%);
+$dark-grayish-blue: hsl(240, 6%, 50%);
+
+// Dividers
+$light-grayish-blue: hsl(240, 5%, 91%);
+
+$font-size: 12px;
+
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+$font-family: "Kumbh Sans", sans-serif;
+$font-weight-400: 400;
+$font-weight-700: 700;
+
+//Mixin
+@mixin flex($direction: row, $justify-content: center) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify-content;
+  flex-direction: $direction;
+}

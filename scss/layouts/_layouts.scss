@@ -1,0 +1,135 @@
+@use "../abstracts/abstracts" as variable;
+
+main {
+  min-height: 98vh;
+  @include variable.flex();
+}
+
+.accordion {
+  width: 60rem;
+  min-height: 27rem;
+  border-radius: 1rem;
+  background-color: white;
+  position: relative;
+
+  background-image: url(../../images/bg-pattern-desktop.svg);
+  background-size: 50rem;
+  background-repeat: no-repeat;
+  background-position-x: -25rem;
+  background-position-y: -15rem;
+
+  @include variable.flex();
+
+  > * {
+    flex-basis: 50%;
+  }
+
+  &__header {
+    img {
+      position: absolute;
+      left: -8%;
+      top: 5%;
+      clip-path: inset(0px 0px 0px 76px round 50px);
+    }
+  }
+
+  &__body {
+    padding-right: 6rem;
+    padding-left: 2rem;
+  }
+
+  &__title {
+    margin: 2rem auto;
+    margin-top: 3rem;
+    font-weight: variable.$font-weight-700;
+    font-size: 2rem;
+  }
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 10rem;
+    left: -8rem;
+    background-image: url(../../images/illustration-box-desktop.svg);
+    bottom: 0px;
+    background-repeat: no-repeat;
+    z-index: 1;
+    height: auto;
+    width: 11.2rem;
+  }
+}
+
+.accordion__list {
+  list-style: none;
+
+  .accordion__item {
+    border-bottom: 1px solid variable.$light-grayish-blue;
+    margin-bottom: 1rem;
+
+    button {
+      color: variable.$very-dark-grayish-blue;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 1rem;
+
+      img {
+        float: right;
+      }
+
+      &:hover {
+        color: variable.$soft-red;
+      }
+    }
+    p {
+      display: none;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .accordion {
+    @include variable.flex(column);
+
+    width: 20rem;
+    background-size: 27rem;
+    background-position-x: -4rem;
+    background-position-y: -18rem;
+
+    > * {
+      flex-basis: unset;
+    }
+
+    &::before {
+      content: unset;
+    }
+
+    &__header {
+      width: auto;
+      height: 5rem;
+
+      img {
+        clip-path: unset;
+        left: 0%;
+        top: -30%;
+      }
+    }
+
+    &__body {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
+
+  .accordion__item button img {
+    float: right;
+    margin-left: 2rem;
+  }
+}

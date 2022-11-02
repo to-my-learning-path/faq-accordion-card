@@ -1,0 +1,23 @@
+@use "../abstracts/abstracts" as variable;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: variable.$font-family;
+  font-size: variable.$font-size;
+  font-weight: variable.$font-weight-400;
+  background: linear-gradient(variable.$soft-violet, variable.$soft-blue);
+  color: variable.$very-dark-grayish-blue;
+  min-height: 100vh;
+}

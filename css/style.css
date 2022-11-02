@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  background: linear-gradient(hsl(273deg, 75%, 66%), hsl(240deg, 73%, 65%));
+  color: hsl(237deg, 12%, 33%);
+  min-height: 100vh;
+}
+
+main {
+  min-height: 98vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.accordion {
+  width: 60rem;
+  min-height: 27rem;
+  border-radius: 1rem;
+  background-color: white;
+  position: relative;
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-size: 50rem;
+  background-repeat: no-repeat;
+  background-position-x: -25rem;
+  background-position-y: -15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.accordion > * {
+  flex-basis: 50%;
+}
+.accordion__header img {
+  position: absolute;
+  left: -8%;
+  top: 5%;
+  clip-path: inset(0px 0px 0px 76px round 50px);
+}
+.accordion__body {
+  padding-right: 6rem;
+  padding-left: 2rem;
+}
+.accordion__title {
+  margin: 2rem auto;
+  margin-top: 3rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.accordion::before {
+  content: " ";
+  position: absolute;
+  top: 10rem;
+  left: -8rem;
+  background-image: url(../images/illustration-box-desktop.svg);
+  bottom: 0px;
+  background-repeat: no-repeat;
+  z-index: 1;
+  height: auto;
+  width: 11.2rem;
+}
+
+.accordion__list {
+  list-style: none;
+}
+.accordion__list .accordion__item {
+  border-bottom: 1px solid hsl(240deg, 5%, 91%);
+  margin-bottom: 1rem;
+}
+.accordion__list .accordion__item button {
+  color: hsl(237deg, 12%, 33%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.accordion__list .accordion__item button img {
+  float: right;
+}
+.accordion__list .accordion__item button:hover {
+  color: hsl(14deg, 88%, 65%);
+}
+.accordion__list .accordion__item p {
+  display: none;
+  margin-bottom: 1rem;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .accordion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20rem;
+    background-size: 27rem;
+    background-position-x: -4rem;
+    background-position-y: -18rem;
+  }
+  .accordion > * {
+    flex-basis: unset;
+  }
+  .accordion::before {
+    content: unset;
+  }
+  .accordion__header {
+    width: auto;
+    height: 5rem;
+  }
+  .accordion__header img {
+    clip-path: unset;
+    left: 0%;
+    top: -30%;
+  }
+  .accordion__body {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .accordion__item button img {
+    float: right;
+    margin-left: 2rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
